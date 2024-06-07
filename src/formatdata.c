@@ -705,13 +705,13 @@ make_one_const(int type, union Constant *storage, chainp values)
 	    while (index > main_index++)
 		*str_ptr++ = ' ';
 
-		k = (int)(Ulong)(((chainp)values->datap)->nextp->nextp->datap);
-		if ((Ulong)((chainp)values->datap)->nextp->datap == TYBLANK) {
-			b = k;
-			break;
-			}
-		*str_ptr = (char)k;
-		values = values -> nextp;
+	    k = (int)(Ulong)(((chainp)values->datap)->nextp->nextp->datap);
+	    if ((Ulong)((chainp)values->datap)->nextp->datap == TYBLANK) {
+	      b = k;
+	      break;
+	    }
+	    *str_ptr = (char)k;
+	    values = values -> nextp;
 	} /* for str_ptr */
 	*str_ptr = '\0';
 	Const = storage;
