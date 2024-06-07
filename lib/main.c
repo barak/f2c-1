@@ -89,8 +89,8 @@ int main(int argc, char **argv) __attribute__((weak));
 int main(int argc, char **argv)
 {
   libf2c_init(argc, argv);
-  MAIN_();
-  libf2c_exit();
+  MAIN__();
+  f_exit();
   exit(0); /* exit(0) rather than return(0) to bypass Cray bug */
   return 0;    /* For compilers that complain of missing return values; */
        /* others will complain that this is unreachable code. */
