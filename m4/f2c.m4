@@ -8,12 +8,12 @@ int main() {
   int bits;
   unsigned long x = 1;
   FILE *f=fopen("conftestval", "w");
-  if (!f) exit(1);
+  if (!f) return 1;
   for (bits = 0; x; bits++) {
     x <<= 1;
   }
   fprintf(f,"F2C_LONG_BITS='%d'",bits);
-  exit(0);
+  return 0;
 }
 ]])],[eval "`cat conftestval`"],[],[])
   AC_MSG_RESULT([$F2C_LONG_BITS])
@@ -29,12 +29,12 @@ int main() {
   int bits;
   unsigned int x = 1;
   FILE *f=fopen("conftestval", "w");
-  if (!f) exit(1);
+  if (!f) return 1;
   for (bits = 0; x; bits++) {
     x <<= 1;
   }
   fprintf(f,"F2C_INT_BITS='%d'",bits);
-  exit(0);
+  return 0;
 }
 ]])],[eval "`cat conftestval`"],[],[])
   AC_MSG_RESULT([$F2C_INT_BITS])
@@ -66,12 +66,12 @@ int main() {
   int bits;
   unsigned long long x = 1;
   FILE *f=fopen("conftestval", "w");
-  if (!f) exit(1);
+  if (!f) return 1;
   for (bits = 0; x; bits++) {
     x <<= 1;
   }
   fprintf(f,"F2C_LONG_LONG_BITS='%d'",bits);
-  exit(0);
+  return 0;
 }]])],[eval "`cat conftestval`"],[],[])
   fi
 fi
